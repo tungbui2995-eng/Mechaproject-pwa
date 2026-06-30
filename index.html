@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecha Project PWA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mecha Project PWA</title>
+  <!-- Link tới manifest (đường dẫn tương đối) -->
+  <link rel="manifest" href="./manifest.json">
+  <!-- Màu nền cho PWA -->
+  <meta name="theme-color" content="#000000">
 </head>
 <body>
-    <h1>Mecha Project PWA</h1>
-    <p>Ứng dụng của bạn đang hoạt động!</p>
+  <h1>Mecha Project PWA</h1>
+  <p>Ứng dụng của bạn đang hoạt động!</p>
+
+  <script>
+    // Đăng ký Service Worker (đường dẫn tương đối)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('✅ Service Worker registered!'))
+        .catch(err => console.error('❌ SW registration failed:', err));
+    }
+  </script>
 </body>
 </html>
