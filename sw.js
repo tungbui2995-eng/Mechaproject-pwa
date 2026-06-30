@@ -1,40 +1,37 @@
-// sw.js — Service Worker tối giản cho MechaProject PWA
-// Mục đích chính: giúp trình duyệt nhận diện đây là PWA hợp lệ (yêu cầu bắt buộc
-// để hiện nút "Cài đặt" / "Thêm vào màn hình chính"). Không cache nặng vì app
-// luôn cần dữ liệu mới nhất từ Google Drive.
-
-const CACHE_NAME = 'mechaproject-shell-v1';
-const SHELL_FILES = [
+const CACHE_NAME = 'mecha-pwa-v1';
+const urlsToCache = [
+  './',
   './index.html',
-  './manifest.json'
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png',
+  './icon-maskable-512.png'
 ];
 
-self.addEventListener('install', (event) => {
-  self.skipWaiting();
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(SHELL_FILES)).catch(() => {})
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(urlsToCache))
   );
 });
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
-    )
-  );
-  self.clients.claim();
-});
-
-// Network-first cho mọi request: luôn ưu tiên dữ liệu mới, chỉ fallback cache khi offline
-self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
+self.addEventListener('fetch', event => {
   event.respondWith(
-    fetch(event.request)
-      .then((res) => {
-        const resClone = res.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone)).catch(() => {});
-        return res;
-      })
-      .catch(() => caches.match(event.request))
+    caches.match(event.request)
+      .then(response => response || fetch(event.request))
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
   );
 });
