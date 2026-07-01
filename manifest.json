@@ -1,6 +1,6 @@
 {
-  "name": "MechaProject — Quản lý dự án cơ khí",
-  "short_name": "MechaProject",
+  "name": "PTI-Project — Quản lý dự án PTI",
+  "short_name": "PTI-Project",
   "description": "Hệ thống quản lý dự án cơ khí chế tạo máy",
   "start_url": "./index.html",
   "scope": "./",
