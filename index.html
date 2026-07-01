@@ -6,11 +6,11 @@
 <meta name="theme-color" content="#0a0c10">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="MechaProject">
+<meta name="apple-mobile-web-app-title" content="PTI-Project">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-<title>MechaProject — Quản lý dự án cơ khí</title>
+<title>PTI-Project — Quản lý dự án PTI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -789,7 +789,7 @@ textarea.form-ctrl { resize: vertical; min-height: 72px; }
       <div class="login-logo">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
       </div>
-      <div class="login-title">MechaProject</div>
+      <div class="login-title">PTI-Project</div>
       <div class="login-subtitle">Hệ thống quản lý dự án cơ khí</div>
     </div>
     <div class="login-body">
@@ -862,7 +862,7 @@ textarea.form-ctrl { resize: vertical; min-height: 72px; }
       </svg>
     </div>
     <div>
-      <div class="logo-name">MechaProject</div>
+      <div class="logo-name">PTI-Project</div>
       <div class="logo-tag">Cơ khí chế tạo máy</div>
     </div>
   </div>
@@ -966,7 +966,7 @@ textarea.form-ctrl { resize: vertical; min-height: 72px; }
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </div>
     <div class="topbar-breadcrumb">
-      <span class="topbar-crumb-root">MechaProject</span>
+      <span class="topbar-crumb-root">PTI-Project</span>
       <span class="topbar-crumb-sep">›</span>
       <span class="topbar-title" id="topbar-title">Dashboard</span>
     </div>
@@ -1508,7 +1508,7 @@ textarea.form-ctrl { resize: vertical; min-height: 72px; }
         <!-- Sidebar -->
         <div class="ai-sidebar">
           <div class="ai-info-card">
-            <div class="ai-info-title">⚡ AI Trợ lý MechaProject</div>
+            <div class="ai-info-title">⚡ AI Trợ lý PTI-Project</div>
             <div style="font-size:11px;color:var(--text2);line-height:1.6">
               Trợ lý AI hiểu ngữ cảnh dự án của bạn. Có thể hỏi về tiến độ, nhân sự, vật tư, kỹ thuật cơ khí và nhiều hơn.
             </div>
@@ -1614,9 +1614,9 @@ const ROLE_TEMPLATES = {
 };
 
 let team = [
-  {name:'Tùng', email:'tungbui2995@gmail.com', role:'Lead Mechanical Engineer / PM', projects:[], status:'Sẵn sàng', roleTemplate:'admin',    perms:{...ROLE_TEMPLATES.admin}, password:'1234'},
-  {name:'Nguyễn Văn A', email:'a@company.com', role:'Lead Mechanical Engineer', projects:['TL-2025-001'], status:'Bận', roleTemplate:'engineer', perms:{...ROLE_TEMPLATES.engineer}, password:'1234'},
-  {name:'Trần Văn B',   email:'b@company.com', role:'Senior Mechanical Designer',     projects:['TL-2025-002'], status:'Sẵn sàng', roleTemplate:'engineer', perms:{...ROLE_TEMPLATES.engineer}, password:'1234'},
+  {name:'Tùng', email:'tungbui2995@gmail.com', role:'Lead PTI-nical Engineer / PM', projects:[], status:'Sẵn sàng', roleTemplate:'admin',    perms:{...ROLE_TEMPLATES.admin}, password:'1234'},
+  {name:'Nguyễn Văn A', email:'a@company.com', role:'Lead PTI-nical Engineer', projects:['TL-2025-001'], status:'Bận', roleTemplate:'engineer', perms:{...ROLE_TEMPLATES.engineer}, password:'1234'},
+  {name:'Trần Văn B',   email:'b@company.com', role:'Senior PTI-nical Designer',     projects:['TL-2025-002'], status:'Sẵn sàng', roleTemplate:'engineer', perms:{...ROLE_TEMPLATES.engineer}, password:'1234'},
   {name:'Lê Văn C',     email:'c@company.com', role:'Automation & Electrical Engineer',projects:['TL-2025-001'], status:'Bận', roleTemplate:'engineer', perms:{...ROLE_TEMPLATES.engineer}, password:'1234'}
 ];
 
@@ -2526,18 +2526,18 @@ function sendEmailNotification({ type, to, toName, proj, phaseIdx }) {
   const payload = {
     action: 'send_email',
     to,
-    subject: `[MechaProject] Bạn được gán phụ trách: ${proj.id} — P${phaseIdx+1}: ${ph.name}`,
+    subject: `[PTI-Project] Bạn được gán phụ trách: ${proj.id} — P${phaseIdx+1}: ${ph.name}`,
     body: `Xin chào ${toName},\n\nBạn được phân công phụ trách giai đoạn sau:\n\n` +
       `📁 Dự án: ${proj.id} — ${proj.name}\n` +
       `👷 Khách hàng: ${proj.client}\n` +
       `📐 Giai đoạn: P${phaseIdx+1} — ${ph.name}\n` +
       `📅 Deadline giai đoạn: ${deadlineText}\n` +
       `📅 Hạn bàn giao dự án: ${proj.deadline}\n\n` +
-      `Vui lòng đăng nhập MechaProject để xem chi tiết và cập nhật tiến độ.\n\nTrân trọng,\nHệ thống MechaProject`,
+      `Vui lòng đăng nhập PTI-Project để xem chi tiết và cập nhật tiến độ.\n\nTrân trọng,\nHệ thống PTI-Project`,
     htmlBody: `
       <div style="font-family:Inter,sans-serif;max-width:560px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">
         <div style="background:linear-gradient(135deg,#3a7de0,#6366f1);padding:22px 24px 18px">
-          <div style="font-size:18px;font-weight:700;color:#fff">⚙ MechaProject</div>
+          <div style="font-size:18px;font-weight:700;color:#fff">⚙ PTI-Project</div>
           <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:3px">Hệ thống quản lý dự án cơ khí</div>
         </div>
         <div style="padding:22px 24px">
@@ -2552,9 +2552,9 @@ function sendEmailNotification({ type, to, toName, proj, phaseIdx }) {
               <span style="color:#5c6578;font-weight:600">Hạn bàn giao</span><span style="color:#eef0f4">${proj.deadline}</span>
             </div>
           </div>
-          <p style="font-size:12px;color:#5c6578">Vui lòng đăng nhập MechaProject để cập nhật tiến độ và tải tài liệu giai đoạn.</p>
+          <p style="font-size:12px;color:#5c6578">Vui lòng đăng nhập PTI-Project để cập nhật tiến độ và tải tài liệu giai đoạn.</p>
         </div>
-        <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject — Hệ thống tự động · Không reply email này</div>
+        <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project — Hệ thống tự động · Không reply email này</div>
       </div>`
   };
   fetch(DRIVE_API_URL, {
@@ -3090,7 +3090,7 @@ function openModal(type, data) {
     document.getElementById('modal-body').innerHTML = `
       <div class="form-row"><label class="form-label">Họ tên *</label><input class="form-ctrl" id="nm-name" placeholder="Nguyễn Văn X"></div>
       <div class="form-row"><label class="form-label">Email *</label><input class="form-ctrl" type="email" id="nm-email" placeholder="ten@company.com"></div>
-      <div class="form-row"><label class="form-label">Vai trò chuyên môn</label><input class="form-ctrl" id="nm-role" placeholder="Mechanical Designer, PLC Engineer..."></div>
+      <div class="form-row"><label class="form-label">Vai trò chuyên môn</label><input class="form-ctrl" id="nm-role" placeholder="PTI-nical Designer, PLC Engineer..."></div>
       <div class="form-row"><label class="form-label">Trạng thái</label>
         <select class="form-ctrl" id="nm-status"><option>Sẵn sàng</option><option>Bận</option><option>Nghỉ phép</option></select>
       </div>
@@ -3361,7 +3361,7 @@ function doRejectTask(taskId) {
     fetch(DRIVE_API_URL, { method:'POST', body: JSON.stringify({
       action:'send_email',
       to: requester.email,
-      subject: `[MechaProject] ❌ ${picName} từ chối nhận việc: ${t.title}`,
+      subject: `[PTI-Project] ❌ ${picName} từ chối nhận việc: ${t.title}`,
       body: `${picName} đã từ chối nhận việc lúc ${timeStr}\n\nLý do: ${reason}\n\nCông việc: ${t.title}\nLoại: ${label}`,
       htmlBody: `
         <div style="font-family:Arial,sans-serif;max-width:520px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">
@@ -3381,7 +3381,7 @@ function doRejectTask(taskId) {
             </div>
             <p style="font-size:12px;color:#5c6578">Vui lòng gán lại cho người khác hoặc liên hệ trực tiếp với ${picName}.</p>
           </div>
-          <div style="padding:12px 22px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject · Thông báo tự động</div>
+          <div style="padding:12px 22px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project · Thông báo tự động</div>
         </div>`
     })}).catch(()=>{});
   }
@@ -3616,7 +3616,7 @@ function sendTaskEmail(taskId) {
   const htmlBody = `
     <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">
       <div style="background:linear-gradient(135deg,${barColor});padding:22px 24px 18px">
-        <div style="font-size:18px;font-weight:700;color:#fff">⚙ MechaProject</div>
+        <div style="font-size:18px;font-weight:700;color:#fff">⚙ PTI-Project</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.85);margin-top:4px">${label}</div>
       </div>
       <div style="padding:22px 24px">
@@ -3632,9 +3632,9 @@ function sendTaskEmail(taskId) {
             ${t.note?`<tr><td style="color:#5c6578;font-weight:600;padding:5px 16px 5px 0">Ghi chú</td><td style="color:#9aa3b5">${t.note}</td></tr>`:''}
           </table>
         </div>
-        <p style="font-size:12px;color:#5c6578">Vui lòng xử lý và cập nhật trạng thái trên MechaProject.</p>
+        <p style="font-size:12px;color:#5c6578">Vui lòng xử lý và cập nhật trạng thái trên PTI-Project.</p>
       </div>
-      <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject · Thông báo tự động · Không reply email này</div>
+      <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project · Thông báo tự động · Không reply email này</div>
     </div>`;
   const plainBody = `${label}\n\nNội dung: ${t.title}\n`
     + (requester?`Người YC: ${requester.name}\n`:'')
@@ -3644,7 +3644,7 @@ function sendTaskEmail(taskId) {
   const payload = {
     action: 'send_email',
     to: member.email,
-    subject: `[MechaProject] ${label}: ${t.title}`,
+    subject: `[PTI-Project] ${label}: ${t.title}`,
     body: plainBody,
     htmlBody
   };
@@ -3686,7 +3686,7 @@ function confirmTask(taskId) {
   const htmlBody = `
     <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">
       <div style="background:linear-gradient(135deg,#34d399,#059669);padding:22px 24px 18px">
-        <div style="font-size:18px;font-weight:700;color:#fff">⚙ MechaProject</div>
+        <div style="font-size:18px;font-weight:700;color:#fff">⚙ PTI-Project</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.9);margin-top:4px">✅ Công việc đã được xác nhận tiếp nhận</div>
       </div>
       <div style="padding:22px 24px">
@@ -3715,7 +3715,7 @@ function confirmTask(taskId) {
         <p style="font-size:12px;color:#5c6578">Bạn sẽ nhận thêm thông báo khi công việc hoàn thành.</p>
       </div>
       <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">
-        MechaProject · Thông báo tự động · Không reply email này
+        PTI-Project · Thông báo tự động · Không reply email này
       </div>
     </div>`;
   const plainBody = `✅ Xác nhận tiếp nhận công việc\n\n`
@@ -3729,7 +3729,7 @@ function confirmTask(taskId) {
     body: JSON.stringify({
       action: 'send_email',
       to: requester.email,
-      subject: `[MechaProject] ✅ ${picName} đã xác nhận nhận việc: ${t.title}`,
+      subject: `[PTI-Project] ✅ ${picName} đã xác nhận nhận việc: ${t.title}`,
       body: plainBody,
       htmlBody
     })
@@ -3828,7 +3828,7 @@ function onLoginUserChange(email) {
   document.getElementById('login-err').style.display='none';
 }
 
-const EMERGENCY_ADMIN_PASSWORD = 'Mecha@2025!'; 
+const EMERGENCY_ADMIN_PASSWORD = 'PTI-@2025!'; 
 
 function emergencyAdminLogin() {
   const inputEl = document.getElementById('emergency-pass');
@@ -3839,7 +3839,7 @@ function emergencyAdminLogin() {
     toast('❌ Sai mật khẩu Admin khẩn cấp'); return;
   }
   const adminUser = {
-    email: 'admin@mechaproject.local',
+    email: 'admin@PTI-project.local',
     name: 'Admin (Khẩn cấp)',
     role: 'System Administrator',
     color: '#f87171',
@@ -4110,7 +4110,7 @@ function sendCartOrderEmail(order, mgr) {
   const htmlBody = `
     <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">
       <div style="background:linear-gradient(135deg,#4f8ef7,#6366f1);padding:22px 24px 18px">
-        <div style="font-size:18px;font-weight:700;color:#fff">⚙ MechaProject — Kho vật tư</div>
+        <div style="font-size:18px;font-weight:700;color:#fff">⚙ PTI-Project — Kho vật tư</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.9);margin-top:4px">🛒 Phiếu order mới cần duyệt — ${order.id}</div>
       </div>
       <div style="padding:22px 24px">
@@ -4125,13 +4125,13 @@ function sendCartOrderEmail(order, mgr) {
           <tr><td style="color:#5c6578;padding:4px 14px 4px 0">Ngày tạo</td><td style="color:#eef0f4">${order.date}</td></tr>
           ${order.note?`<tr><td style="color:#5c6578;padding:4px 14px 4px 0">Ghi chú</td><td style="color:#9aa3b5">${order.note}</td></tr>`:''}
         </table>
-        <p style="font-size:12px;color:#5c6578">Đăng nhập MechaProject → Kho → Order từ kho để Xác nhận hoặc Từ chối.</p>
+        <p style="font-size:12px;color:#5c6578">Đăng nhập PTI-Project → Kho → Order từ kho để Xác nhận hoặc Từ chối.</p>
       </div>
-      <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject · Kho vật tư · Không reply email này</div>
+      <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project · Kho vật tư · Không reply email này</div>
     </div>`;
   fetch(DRIVE_API_URL,{method:'POST',body:JSON.stringify({
     action:'send_email', to:mgr.email,
-    subject:`[MechaProject Kho] Phiếu order mới ${order.id} — ${order.items.length} loại vật tư`,
+    subject:`[PTI-Project Kho] Phiếu order mới ${order.id} — ${order.items.length} loại vật tư`,
     body:'Phiếu order mới: '+order.id+'\nNgười order: '+order.orderer+'\nVật tư:\n'+order.items.map(function(i){return '- '+i.stockName+': '+i.qty+' '+i.unit}).join('\n'),
     htmlBody
   })}).then(r=>r.json()).then(res=>{
@@ -4218,7 +4218,7 @@ function sendOrderResultEmail(o, action, recipient, timeStr) {
   const htmlBody = `
     <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">
       <div style="background:linear-gradient(135deg,${barColor});padding:22px 24px 18px">
-        <div style="font-size:18px;font-weight:700;color:#fff">⚙ MechaProject — Kho vật tư</div>
+        <div style="font-size:18px;font-weight:700;color:#fff">⚙ PTI-Project — Kho vật tư</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.9);margin-top:4px">${statusLabel}</div>
       </div>
       <div style="padding:22px 24px">
@@ -4238,11 +4238,11 @@ function sendOrderResultEmail(o, action, recipient, timeStr) {
         </div>
         <p style="font-size:12px;color:#5c6578">${approved?'Vui lòng đến kho nhận vật tư trong giờ hành chính.':'Liên hệ quản lý kho để biết thêm chi tiết.'}</p>
       </div>
-      <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject · Kho vật tư · Không reply email này</div>
+      <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project · Kho vật tư · Không reply email này</div>
     </div>`;
   fetch(DRIVE_API_URL, { method:'POST', body: JSON.stringify({
     action:'send_email', to: recipient.email,
-    subject: `[MechaProject Kho] ${statusLabel}: ${o.stockName} × ${o.qty} ${o.unit}`,
+    subject: `[PTI-Project Kho] ${statusLabel}: ${o.stockName} × ${o.qty} ${o.unit}`,
     body: `${statusLabel}\n\nPhiếu: ${o.id}\nVật tư: ${o.stockName}\nSố lượng: ${o.qty} ${o.unit}\nDuyệt bởi: ${o.confirmedBy}\nThời gian: ${timeStr}`,
     htmlBody
   })}).then(r=>r.json()).then(res=>{
@@ -4453,7 +4453,7 @@ function sendTxnResultEmail(txn, action, recipient, timeStr, rejectReason) {
   const htmlBody = `
     <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">
       <div style="background:linear-gradient(135deg,${barColor});padding:22px 24px 18px">
-        <div style="font-size:18px;font-weight:700;color:#fff">⚙ MechaProject — Kho vật tư</div>
+        <div style="font-size:18px;font-weight:700;color:#fff">⚙ PTI-Project — Kho vật tư</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.9);margin-top:4px">
           ${isImport?'📥 Phiếu Nhập kho':'📤 Phiếu Xuất kho'} — ${statusLabel}
         </div>
@@ -4479,11 +4479,11 @@ function sendTxnResultEmail(txn, action, recipient, timeStr, rejectReason) {
         </div>
         <p style="font-size:12px;color:#5c6578">${approved?(isImport?'Vật tư đã được cập nhật vào kho.':'Vui lòng đến kho nhận vật tư.'):'Liên hệ thủ kho để biết thêm chi tiết.'}</p>
       </div>
-      <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject · Kho vật tư · Không reply email này</div>
+      <div style="padding:14px 24px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project · Kho vật tư · Không reply email này</div>
     </div>`;
   fetch(DRIVE_API_URL, { method:'POST', body: JSON.stringify({
     action:'send_email', to: recipient.email,
-    subject: `[MechaProject Kho] ${statusLabel}: ${txn.stockName} × ${txn.qty} ${txn.unit}`,
+    subject: `[PTI-Project Kho] ${statusLabel}: ${txn.stockName} × ${txn.qty} ${txn.unit}`,
     body: `${statusLabel}\nPhiếu: ${txn.id}\nVật tư: ${txn.stockName}\nSố lượng: ${txn.qty} ${txn.unit}\nThủ kho: ${txn.confirmedBy}\n${rejectReason?'Lý do: '+rejectReason:''}`,
     htmlBody
   })}).then(r=>r.json()).then(res=>{
@@ -4867,7 +4867,7 @@ function sendChatMessage() {
       const htmlBody = `
         <div style="font-family:Arial,sans-serif;max-width:520px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">
           <div style="background:linear-gradient(135deg,#6366f1,#4f8ef7);padding:20px 22px 16px">
-            <div style="font-size:17px;font-weight:700;color:#fff">💬 MechaProject Chat</div>
+            <div style="font-size:17px;font-weight:700;color:#fff">💬 PTI-Project Chat</div>
             <div style="font-size:12px;color:rgba(255,255,255,0.8);margin-top:3px">Bạn được nhắc đến trong ${roomName}</div>
           </div>
           <div style="padding:20px 22px">
@@ -4876,13 +4876,13 @@ function sendChatMessage() {
             <div style="background:#1e2330;border-left:3px solid #6366f1;border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:#eef0f4;line-height:1.6;margin-bottom:16px">
               ${text.replace(/@([\w\sÀ-ỹ]+)/g,'<strong style="color:#a78bfa">@$1</strong>')}
             </div>
-            <p style="font-size:12px;color:#5c6578">Đăng nhập MechaProject → Chat để xem toàn bộ cuộc trò chuyện.</p>
+            <p style="font-size:12px;color:#5c6578">Đăng nhập PTI-Project → Chat để xem toàn bộ cuộc trò chuyện.</p>
           </div>
-          <div style="padding:12px 22px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject · Chat · Không reply email này</div>
+          <div style="padding:12px 22px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project · Chat · Không reply email này</div>
         </div>`;
       fetch(DRIVE_API_URL, { method:'POST', body: JSON.stringify({
         action:'send_email', to: mentioned.email,
-        subject:`[MechaProject] ${senderName} nhắc đến bạn trong ${roomName}`,
+        subject:`[PTI-Project] ${senderName} nhắc đến bạn trong ${roomName}`,
         body:`${senderName} nhắc đến bạn lúc ${timeStr} trong ${roomName}:\n\n${text}`,
         htmlBody
       })}).then(r=>r.json()).then(res=>{
@@ -4971,7 +4971,7 @@ function buildAIContext() {
 }
 
 function buildSystemPrompt() {
-  return `Bạn là AI trợ lý nội bộ của MechaProject — hệ thống quản lý dự án cơ khí chế tạo máy.
+  return `Bạn là AI trợ lý nội bộ của PTI-Project — hệ thống quản lý dự án cơ khí chế tạo máy.
 Bạn có thể trả lời bằng tiếng Việt hoặc tiếng Anh tùy theo ngôn ngữ người dùng hỏi.
 Bạn hiểu sâu về: cơ khí chế tạo máy, gia công CNC, uốn tôn, hàn, lắp ráp, PLC/HMI, quản lý dự án.
 
@@ -5030,7 +5030,7 @@ function renderAIMessages() {
         </div>
         <div style="font-size:16px;font-weight:700;margin-bottom:6px">Xin chào, ${userName}!</div>
         <div style="font-size:13px;color:var(--text2);max-width:320px;margin:0 auto;line-height:1.6">
-          Tôi là AI trợ lý của MechaProject. Tôi có quyền truy cập dữ liệu thực tế của hệ thống và có thể giúp bạn phân tích tiến độ, tư vấn kỹ thuật cơ khí, và nhiều hơn.
+          Tôi là AI trợ lý của PTI-Project. Tôi có quyền truy cập dữ liệu thực tế của hệ thống và có thể giúp bạn phân tích tiến độ, tư vấn kỹ thuật cơ khí, và nhiều hơn.
         </div>
         <div style="margin-top:16px;font-size:12px;color:var(--text2)">Chọn câu hỏi gợi ý bên trái hoặc tự nhập ↓</div>
       </div>`;
@@ -5151,7 +5151,7 @@ function triggerDailyReport(manual) {
       }
     });
   });
-  const PM_EMAIL = team.find(t=>t.roleTemplate==='admin'&&t.email!=='admin@mechaproject.local')?.email
+  const PM_EMAIL = team.find(t=>t.roleTemplate==='admin'&&t.email!=='admin@PTI-project.local')?.email
                 || currentUser?.email;
   if(!PM_EMAIL) { toast('Không tìm thấy email PM'); return; }
   const urgent = allPending.filter(x=>x.dlUrgent);
@@ -5184,7 +5184,7 @@ function triggerDailyReport(manual) {
   }
   const pmHtml = '<div style="font-family:Arial,sans-serif;max-width:700px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">'
     + '<div style="background:linear-gradient(135deg,#3a7de0,#6366f1);padding:22px 24px 18px">'
-    +   '<div style="font-size:18px;font-weight:700;color:#fff">⚙ MechaProject</div>'
+    +   '<div style="font-size:18px;font-weight:700;color:#fff">⚙ PTI-Project</div>'
     +   '<div style="font-size:13px;color:rgba(255,255,255,0.85);margin-top:4px">📊 Báo cáo tồn đọng hàng ngày — ' + dateStr + '</div>'
     + '</div>'
     + '<div style="padding:20px 22px">'
@@ -5193,12 +5193,12 @@ function triggerDailyReport(manual) {
     +   buildTable(normal, '📋 Đang thực hiện', '#4f8ef7')
     +   (allPending.length===0 ? '<div style="color:#34d399;padding:12px">✅ Không có giai đoạn tồn đọng hôm nay!</div>' : '')
     + '</div>'
-    + '<div style="padding:12px 22px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject · Báo cáo tự động · Không reply</div>'
+    + '<div style="padding:12px 22px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project · Báo cáo tự động · Không reply</div>'
     + '</div>';
   showLoading('Đang gửi báo cáo...');
   fetch(DRIVE_API_URL, { method:'POST', body: JSON.stringify({
     action:'send_email', to: PM_EMAIL,
-    subject: '[MechaProject] 📊 Báo cáo tồn đọng ' + dateStr + ' — ' + allPending.length + ' giai đoạn',
+    subject: '[PTI-Project] 📊 Báo cáo tồn đọng ' + dateStr + ' — ' + allPending.length + ' giai đoạn',
     body: 'Báo cáo '+dateStr+'\nTổng tồn đọng: '+allPending.length+' giai đoạn\nCần xử lý ngay: '+urgent.length+'\n\n'+allPending.map(function(x){return x.projId+' | '+x.phase+' | '+x.pct+'% | '+x.dlStatus+' | '+x.pic;}).join('\n'),
     htmlBody: pmHtml
   })}).then(r=>r.json()).then(res=>{
@@ -5211,7 +5211,7 @@ function triggerDailyReport(manual) {
     const uItems = items.filter(x=>x.dlUrgent);
     const picHtml = '<div style="font-family:Arial,sans-serif;max-width:620px;margin:0 auto;background:#111318;color:#eef0f4;border-radius:12px;overflow:hidden;border:1px solid #262d3d">'
       + '<div style="background:linear-gradient(135deg,#1e2330,#2f3850);padding:22px 24px 18px;border-bottom:2px solid #4f8ef7">'
-      +   '<div style="font-size:18px;font-weight:700;color:#fff">⚙ MechaProject</div>'
+      +   '<div style="font-size:18px;font-weight:700;color:#fff">⚙ PTI-Project</div>'
       +   '<div style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:4px">📋 Công việc của bạn — ' + dateStr + '</div>'
       + '</div>'
       + '<div style="padding:20px 22px">'
@@ -5220,11 +5220,11 @@ function triggerDailyReport(manual) {
       +   buildTable(uItems, '⚠️ Cần xử lý ngay', '#f87171')
       +   buildTable(items.filter(function(x){ return !x.dlUrgent; }), '📋 Đang thực hiện', '#4f8ef7')
       + '</div>'
-      + '<div style="padding:12px 22px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">MechaProject · Báo cáo tự động · Không reply</div>'
+      + '<div style="padding:12px 22px;border-top:1px solid #262d3d;font-size:11px;color:#5c6578">PTI-Project · Báo cáo tự động · Không reply</div>'
       + '</div>';
     fetch(DRIVE_API_URL, { method:'POST', body: JSON.stringify({
       action:'send_email', to: email,
-      subject: '[MechaProject] 📋 Công việc của bạn ' + dateStr + ' — ' + items.length + ' giai đoạn',
+      subject: '[PTI-Project] 📋 Công việc của bạn ' + dateStr + ' — ' + items.length + ' giai đoạn',
       body: items.map(function(x){ return x.projId+' | '+x.phase+' | '+x.pct+'% | '+x.dlStatus; }).join('\n'),
       htmlBody: picHtml
     })}).then(r=>r.json()).then(res=>{
