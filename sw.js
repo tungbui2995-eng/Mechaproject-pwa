@@ -3,7 +3,7 @@
 // để hiện nút "Cài đặt" / "Thêm vào màn hình chính"). Không cache nặng vì app
 // luôn cần dữ liệu mới nhất từ Google Drive.
 
-const CACHE_NAME = 'mechaproject-shell-v2';
+const CACHE_NAME = 'mechaproject-shell-v3';
 const SHELL_FILES = [
   './index.html',
   './manifest.json'
